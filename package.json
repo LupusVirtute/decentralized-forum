@@ -2,12 +2,17 @@
   "name": "decentralized-forum",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "lint": "yarn workspace www lint && yarn workspace api lint",
+    "lint:fix": "yarn workspace www lint:fix && yarn workspace api lint:fix",
+    "test": "yarn workspace www test && yarn workspace api test"
+  },
   "private": true,
   "dependencies": {},
   "devDependencies": {
     "@nrwl/cli": "14.5.8",
     "@nrwl/js": "14.5.8",
+    "@nrwl/nest": "^14.5.8",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/workspace": "14.5.8",
     "nx": "14.5.8",

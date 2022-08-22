@@ -1,0 +1,10 @@
+{
+  "root": "packages/www",
+  "sourceRoot": "packages/www/src",
+  "projectType": "application",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "prod": ["!{projectRoot}/**/*.spec.tsx"]
+  },
+  "tags": ["scope:myteam"]
+}

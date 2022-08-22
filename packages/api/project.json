@@ -1,0 +1,66 @@
+{
+  "root": "packages/api",
+  "sourceRoot": "packages/api/src",
+  "projectType": "application",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "prod": ["!{projectRoot}/**/*.spec.tsx"]
+  },
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "inputs": ["default", "^prod"],
+      "outputs": [],
+      "dependsOn": ["build"],
+      "options": {
+        "jestConfig": "libs/mylib/jest.config.js",
+        "tsConfig": "libs/mylib/tsconfig.spec.json"
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "build/packages/nest",
+        "tsConfig": "packages/nest/tsconfig.lib.json",
+        "main": "packages/nest/index.ts",
+        "updateBuildableProjectDepsInPackageJson": false,
+        "assets": [
+          {
+            "input": "packages/nest",
+            "glob": "**/files/**",
+            "output": "/"
+          },
+          {
+            "input": "packages/nest",
+            "glob": "**/files/**/.gitkeep",
+            "output": "/"
+          },
+          {
+            "input": "packages/nest",
+            "glob": "**/*.json",
+            "ignore": ["**/tsconfig*.json", "project.json", ".eslintrc.json"],
+            "output": "/"
+          },
+          {
+            "input": "packages/nest",
+            "glob": "**/*.js",
+            "ignore": ["**/jest.config.js"],
+            "output": "/"
+          },
+          {
+            "input": "packages/nest",
+            "glob": "**/*.d.ts",
+            "output": "/"
+          },
+          {
+            "input": "",
+            "glob": "LICENSE",
+            "output": "/"
+          }
+        ]
+      },
+      "outputs": ["{options.outputPath}"]
+    }
+  },
+  "tags": ["scope:myteam"]
+}
