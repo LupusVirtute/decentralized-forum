@@ -1,7 +1,14 @@
 {
-  "extends": ["../../.eslintrc.json"],
+  "plugins": ["nestjs"],
+  "extends": ["../../.eslintrc.json", "plugin:nestjs/recommended"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
+    {
+      "files": ["main.ts"],
+      "rules": {
+        "unicorn/prefer-top-level-await": "off"
+      }
+    },
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {}
