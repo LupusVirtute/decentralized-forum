@@ -1,22 +1,19 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/www/src",
+  "sourceRoot": "apps/www",
   "targets": {
     "build": {
-      "executor": "@nxext/sveltekit:sveltekit",
+      "executor": "nx:run-commands",
       "options": {
-        "command": "build"
+        "command": "yarn workspace www vite build" 
       }
     },
     "serve": {
-      "executor": "@nxext/sveltekit:sveltekit",
+      "executor": "nx:run-commands",
       "options": {
-        "command": "dev"
+        "command": "yarn workspace www vite dev"
       }
-    },
-    "add": {
-      "executor": "@nxext/sveltekit:add"
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",

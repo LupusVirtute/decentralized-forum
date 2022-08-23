@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "type": "module",
   "devDependencies": {
-    "svelte": "../../node_modules/svelte"
+    "svelte": "./node_modules/svelte"
+  },
+  "dependencies": {
+    "vite": "^3.0.9",
+    "@sveltejs/kit": "next"
   }
 }
