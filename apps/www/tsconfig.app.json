@@ -2,9 +2,10 @@
   "extends": "./tsconfig.json",
 
   "compilerOptions": {
+    "noEmit": false,
     "outDir": "../../dist/out-tsc",
     "composite": true
   },
-  "include": ["src/**/*","vite.config.js"],
+  "include": ["src/**/*", "vite.config.js"],
   "exclude": ["**/*.spec.ts", "**/*_spec.ts"]
 }
