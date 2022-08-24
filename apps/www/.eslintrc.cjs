@@ -7,7 +7,7 @@ module.exports = {
     'prettier',
   ],
   plugins: ['svelte3', '@typescript-eslint'],
-  ignorePatterns: ['!**/*', '*.cjs', 'svelte.config.js'],
+  ignorePatterns: ['!**/*', '*.cjs', 'svelte.config.js', '.svelte-kit/**/*'],
   overrides: [
     {
       files: ['*.ts', '*.js', '*.svelte'],
