@@ -10,6 +10,7 @@
      */
     "importsNotUsedAsValues": "error",
     "isolatedModules": true,
+    "noEmit": false,
     /**
       To have warnings/errors of the Svelte compiler at the correct position,
       enable source maps by default.
@@ -24,7 +25,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "files": [],
-  "include": [],
+  "include": ["src/**/*"],
   "references": [
     {
       "path": "./tsconfig.app.json"
